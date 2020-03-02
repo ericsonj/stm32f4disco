@@ -1,0 +1,11 @@
+opus_multistream_decoder.c:307:13:opus_copy_channel_out_float	12	static
+opus_multistream_decoder.c:338:13:opus_copy_channel_out_short	56	static
+opus_multistream_decoder.c:53:12:opus_multistream_decoder_get_size	16	static
+opus_multistream_decoder.c:66:5:opus_multistream_decoder_init	32	static
+opus_multistream_decoder.c:113:16:opus_multistream_decoder_create	40	static
+opus_multistream_decoder.c:416:5:opus_multistream_decoder_ctl_va_list	40	static
+opus_multistream_decoder.c:536:5:opus_multistream_decoder_ctl	12	static
+opus_multistream_decoder.c:178:5:opus_multistream_decode_native	224	dynamic
+opus_multistream_decoder.c:395:5:opus_multistream_decode	40	static
+opus_multistream_decoder.c:402:5:opus_multistream_decode_float	40	static
+opus_multistream_decoder.c:546:6:opus_multistream_decoder_destroy	0	static

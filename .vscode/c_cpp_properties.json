@@ -1,0 +1,71 @@
+{
+    "configurations": [
+        {
+            "name": "ARM",
+            "defines": [
+                "USE_HAL_DRIVE",
+                "CORE_CM4",
+                "STM32F407xx",
+                "DEBUG",
+                "VERSION",
+                "__USE_CJSON__",
+                "STM32F4xx",
+                "HAVE_CONFIG_H",
+                "HAVE_ALLOCA_H"
+            ],
+            "compilerPath": "arm-none-eabi-gcc",
+            "intelliSenseMode": "gcc-x64",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "includePath": [
+                "/opt/gcc-arm-none-eabi-8-2018-q4-major/arm-none-eabi/include",
+                "/opt/gcc-arm-none-eabi-8-2018-q4-major/arm-none-eabi/include/c++/8.2.1",
+                "/opt/gcc-arm-none-eabi-8-2018-q4-major/arm-none-eabi/include/c++/8.2.1/arm-none-eabi",
+                "/opt/gcc-arm-none-eabi-8-2018-q4-major/arm-none-eabi/include/c++/8.2.1/backward",
+                "/opt/gcc-arm-none-eabi-8-2018-q4-major/lib/gcc/arm-none-eabi/8.2.1/include",
+                "/opt/gcc-arm-none-eabi-8-2018-q4-major/lib/gcc/arm-none-eabi/8.2.1/include-fixed",
+                "Drivers/STM32F4xx_HAL_Driver/Inc/Legacy",
+                "Drivers/STM32F4xx_HAL_Driver/Inc",
+                "Drivers/CMSIS/Device/ST/STM32F4xx/Include",
+                "Drivers/CMSIS/Include",
+                "Drivers/BSP/STM32F4-Discovery",
+                "Lib",
+                "opus/include",
+                "opus/src",
+                "opus/celt",
+                "opus/silk",
+                "opus/silk/float",
+                "opus/cortex",
+                "Core/Inc",
+                "cJSON/Inc"
+            ],
+            "browse": {
+                "path": [
+                    "/opt/gcc-arm-none-eabi-8-2018-q4-major/arm-none-eabi/include",
+                    "/opt/gcc-arm-none-eabi-8-2018-q4-major/arm-none-eabi/include/c++/8.2.1",
+                    "/opt/gcc-arm-none-eabi-8-2018-q4-major/arm-none-eabi/include/c++/8.2.1/arm-none-eabi",
+                    "/opt/gcc-arm-none-eabi-8-2018-q4-major/arm-none-eabi/include/c++/8.2.1/backward",
+                    "/opt/gcc-arm-none-eabi-8-2018-q4-major/lib/gcc/arm-none-eabi/8.2.1/include",
+                    "/opt/gcc-arm-none-eabi-8-2018-q4-major/lib/gcc/arm-none-eabi/8.2.1/include-fixed",
+                    "Drivers/STM32F4xx_HAL_Driver/Inc/Legacy",
+                    "Drivers/STM32F4xx_HAL_Driver/Inc",
+                    "Drivers/CMSIS/Device/ST/STM32F4xx/Include",
+                    "Drivers/CMSIS/Include",
+                    "Drivers/BSP/STM32F4-Discovery",
+                    "Lib",
+                    "opus/include",
+                    "opus/src",
+                    "opus/celt",
+                    "opus/silk",
+                    "opus/silk/float",
+                    "opus/cortex",
+                    "Core/Inc",
+                    "cJSON/Inc"
+                ],
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": "${workspaceFolder}/.vscode/browse.vc.db"
+            }
+        }
+    ],
+    "version": 4
+}

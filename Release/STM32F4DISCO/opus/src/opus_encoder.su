@@ -1,0 +1,16 @@
+opus_encoder.c:477:13:gain_fade	20	static
+opus_encoder.c:751:12:compute_silk_rate_for_hybrid	16	static
+opus_encoder.c:564:6:downmix_float	28	static
+opus_encoder.c:588:6:downmix_int	32	static
+opus_encoder.c:168:5:opus_encoder_get_size	16	static
+opus_encoder.c:182:5:opus_encoder_init	40	static
+opus_encoder.c:516:14:opus_encoder_create	32	static
+opus_encoder.c:611:12:frame_size_select	16	static
+opus_encoder.c:636:12:compute_stereo_width	40	static
+opus_encoder.c:840:5:is_digital_silence	0	static
+opus_encoder.c:1066:12:opus_encode_native	376	dynamic
+opus_encoder.c:939:19:encode_multiframe_packet	424	dynamic
+opus_encoder.c:2235:12:opus_encode	72	dynamic
+opus_encoder.c:2258:12:opus_encode_float	72	static
+opus_encoder.c:2269:5:opus_encoder_ctl	124	static
+opus_encoder.c:2780:6:opus_encoder_destroy	0	static

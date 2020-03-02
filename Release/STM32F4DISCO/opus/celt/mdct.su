@@ -1,0 +1,2 @@
+mdct.c:119:6:clt_mdct_forward_c	80	dynamic
+mdct.c:242:6:clt_mdct_backward_c	56	static

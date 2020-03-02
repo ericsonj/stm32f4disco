@@ -1,0 +1,8 @@
+quant_bands.c:156:12:quant_coarse_energy_impl.isra.3	136	static
+quant_bands.c:261:6:quant_coarse_energy	232	dynamic
+quant_bands.c:361:6:quant_fine_energy	72	static
+quant_bands.c:398:6:quant_energy_finalise	80	static
+quant_bands.c:428:6:unquant_coarse_energy	80	static
+quant_bands.c:493:6:unquant_fine_energy	56	static
+quant_bands.c:516:6:unquant_energy_finalise	64	static
+quant_bands.c:544:6:amp2Log2	36	static

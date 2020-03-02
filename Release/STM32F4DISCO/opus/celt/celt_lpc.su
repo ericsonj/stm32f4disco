@@ -1,0 +1,4 @@
+celt_lpc.c:37:6:_celt_lpc	32	static
+celt_lpc.c:91:6:celt_fir_c	88	dynamic
+celt_lpc.c:129:6:celt_iir	96	dynamic
+celt_lpc.c:210:5:_celt_autocorr	56	dynamic

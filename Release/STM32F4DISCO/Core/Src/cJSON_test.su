@@ -1,0 +1,3 @@
+cJSON_test.c:63:14:testMalloc	16	static
+cJSON_test.c:68:13:testFree	16	static
+cJSON_test.c:75:6:cJSON_test	24	static

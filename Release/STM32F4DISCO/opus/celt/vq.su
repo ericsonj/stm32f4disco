@@ -1,0 +1,10 @@
+vq.c:47:13:exp_rotation1	8	static
+vq.c:165:12:op_pvq_search_c.constprop	80	dynamic
+vq.c:47:13:exp_rotation1.constprop	4	static
+vq.c:74:6:exp_rotation.part.0.constprop	64	static
+vq.c:74:6:exp_rotation	72	static
+vq.c:165:12:op_pvq_search_c	80	dynamic
+vq.c:330:10:alg_quant	88	dynamic
+vq.c:363:10:alg_unquant	64	dynamic
+vq.c:383:6:renormalise_vector	24	static
+vq.c:410:5:stereo_itheta	24	static
