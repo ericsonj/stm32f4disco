@@ -1,8 +1,0 @@
-entdec.c:119:6:ec_dec_init	16	static
-entdec.c:139:10:ec_decode	4	static
-entdec.c:146:10:ec_decode_bin	8	static
-entdec.c:153:6:ec_dec_update	28	static
-entdec.c:162:5:ec_dec_bit_logp	32	static
-entdec.c:177:5:ec_dec_icdf	28	static
-entdec.c:198:13:ec_dec_uint	48	static
-entdec.c:225:13:ec_dec_bits	16	static

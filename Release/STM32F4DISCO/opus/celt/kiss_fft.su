@@ -1,3 +1,0 @@
-kiss_fft.c:521:6:opus_fft_impl	200	static
-kiss_fft.c:569:6:opus_fft_c	12	static
-kiss_fft.c:592:6:opus_ifft_c	24	static

@@ -1,5 +1,0 @@
-PLC.c:170:25:silk_PLC_energy	72	dynamic
-PLC.c:194:25:silk_PLC_conceal	224	dynamic
-PLC.c:54:6:silk_PLC_Reset	8	static
-PLC.c:65:6:silk_PLC	48	static
-PLC.c:392:6:silk_PLC_glue_frames	32	static

@@ -1,8 +1,0 @@
-celt_decoder.c:260:6:deemphasis	56	dynamic
-celt_decoder.c:480:12:celt_plc_pitch_search	4128	dynamic
-celt_decoder.c:363:6:celt_synthesis	104	dynamic
-celt_decoder.c:496:13:celt_decode_lost	4544	dynamic
-celt_decoder.c:144:5:celt_decoder_get_size	8	static
-celt_decoder.c:814:5:celt_decode_with_ec	336	dynamic
-celt_decoder.c:1247:5:opus_custom_decoder_ctl	28	static
-celt_decoder.c:176:5:celt_decoder_init	24	static
