@@ -28,7 +28,7 @@
 
 
 import subprocess
-
+import pathlib
 
 def getCommitHash(abbreviated=True):
     hashValue = ''
@@ -61,3 +61,28 @@ def getDescribe(options='--long'):
         print('WARNING: Can not get commit hash')
         
     return desc
+
+
+def addSubmodule(url, dst_dir):
+    dstDir = pathlib.Path(pathlib.Path(dst_dir) / '.git')
+    if dstDir.exists():
+        return
+
+    cmd1 = ['git',  'submodule', 'add', url, dst_dir]
+    cmd2 = ['git',  'submodule', 'init']
+    cmd3 = ['git',  'submodule', 'update']
+    
+    try:
+        subprocess.check_output(cmd1).strip().decode('utf-8')
+    except:
+        pass
+
+    try:
+        subprocess.check_output(cmd2).strip().decode('utf-8')
+    except:
+        pass
+
+    try:
+        subprocess.check_output(cmd3).strip().decode('utf-8')
+    except:
+        pass

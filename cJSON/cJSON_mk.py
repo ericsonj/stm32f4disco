@@ -1,15 +1,15 @@
-from pybuild import preutil
+from pybuild.Module import ModuleHandle, GCC_CompilerOpts
 
 
-def getSrcs(wk):
-    return preutil.getAllSrcs_C(wk)
+def getSrcs(mh: ModuleHandle):
+    return mh.getAllSrcsC()
 
 
-def getIncs(wk):
-    return preutil.getAllIncs_C(wk)
+def getIncs(mh: ModuleHandle):
+    return mh.getAllIncsC()
 
 
-def getCompilerOpts(wk):
-    opt = wk['compilerOpts']
-    opt['CONTROL-C-OPTS'] = ['-std=c89']
-    return opt
+def getCompilerOpts(mh: ModuleHandle):
+    opts = GCC_CompilerOpts(mh.getGeneralCompilerOpts())
+    opts.setControlCOpts(['-std=c89'])
+    return opts

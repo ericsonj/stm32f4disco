@@ -39,7 +39,7 @@
 #include <stdlib.h>
 #include "tm_stm32_rtc.h"
 #include "opus.h"
-
+#include "GString.h"
 
 /** @addtogroup STM32F4xx_HAL_Examples
  * @{
@@ -127,16 +127,44 @@ int main( void ) {
 	TM_RTC_GetDateTime(&RTCD, TM_RTC_Format_BCD);
 #endif
 
+//	int err;
+//	OpusDecoder *dec = NULL;
+//	dec = opus_decoder_create(16000, 1, &err);
+//	if (dec != NULL) {
+//		opus_int16 data[10];
+//		int res = opus_decode(dec, NULL, 0, data, 10, 0);
+//	}
 
-	int err;
-	OpusDecoder *dec = NULL;
-	dec = opus_decoder_create(16000, 1, &err);
-	if (dec != NULL) {
-		opus_int16 data[10];
-		int res = opus_decode(dec, NULL, 0, data, 10, 0);
+	GRoot root;
+	root.g_malloc = malloc;
+	root.g_free = free;
+	GErr err;
+
+	uint32_t startTicks = HAL_GetTick();
+
+	int i = 0;
+	for ( i = 0; i < 10000; i++ ) {
+
+		GString* str = g_string_sized_new(&root, 64, &err);
+
+		g_string_append_printf(&root, str, &err, "%s %s %s\r\n", "GET",
+				"/index", "HTTP/1.1");
+		g_string_append_printf(&root, str, &err, "%s: %s\r\n", "Server",
+				"ericsonj.net");
+		g_string_append_printf(&root, str, &err, "%s: %s\r\n", "Content-Type",
+				"text/html;charset=UTF-8");
+		g_string_append_printf(&root, str, &err, "%s: %d\r\n", "Content-Length",
+				0);
+		g_string_append(&root, str, "\r\n", &err);
+		g_string_append(&root, str,
+				"<html><head></head><body>Hello</body></html>", &err);
+
+		g_string_free(&root, str, &err);
+
 	}
 
 
+	uint32_t endTicks = HAL_GetTick() - startTicks;
 
 	/* Infinite loop */
 	while ( 1 ) {
@@ -144,12 +172,12 @@ int main( void ) {
 		BSP_LED_On(LED5);
 		BSP_LED_Off(LED4);
 		BSP_LED_Off(LED6);
-		HAL_Delay(500);
+		HAL_Delay(endTicks);
 		BSP_LED_On(LED4);
 		BSP_LED_On(LED6);
 		BSP_LED_Off(LED3);
 		BSP_LED_Off(LED5);
-		HAL_Delay(500);
+		HAL_Delay(endTicks);
 	}
 }
 
@@ -250,9 +278,6 @@ void assert_failed(uint8_t* file, uint32_t line)
   }
 }
 #endif
-
-
-
 
 /**
  * @}

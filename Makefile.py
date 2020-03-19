@@ -74,7 +74,9 @@ def getCompilerOpts():
         'DEBUG':                    None,
         'VERSION':                  "0.0.1",
         '__USE_CJSON__':            None,
-        'STM32F4xx':                None
+        'STM32F4xx':                None,
+        'HAVE_CONFIG_H':            None,
+        'HAVE_ALLOCA_H':            None
     }
 
     return {

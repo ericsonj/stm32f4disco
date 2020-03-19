@@ -26,64 +26,54 @@
 # NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 # SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+# generate .vscode/c_cpp_properties.json
+import os
+import json
 
-from pathlib import Path
-from .Module import ModuleHandle
-from .Module import SrcType
-from .Module import IncType
+# No implement yet
+compilerOpts = {}
+compilerSettings = {}
+includes = []
 
-def getAllSrcs(wkmh, srcType: SrcType):
-    if isinstance(wkmh, ModuleHandle):
-        wk = wkmh.getWorkspace()
-    else:
-        wk = wkmh
-    srcs = []
-    for ext in srcType:
-        srcs += list(Path(wk['modPath']).rglob('*' + ext))
-    return srcs
+strIncs = []
+aux = []
 
+if compilerSettings['INCLUDES']:
+    aux += compilerSettings['INCLUDES']
+if includes:
+    aux += includes
 
-def getAllSrcs_C(wkmh):
-    if isinstance(wkmh, ModuleHandle):
-        wk = wkmh.getWorkspace()
-    else:
-        wk = wkmh
-    return getAllSrcs(wk, SrcType.C)
+strIncs = [str(i) for i in aux]
 
+defines = []
+if compilerOpts['MACROS']:
+    deflist = compilerOpts['MACROS']
+    defines = [d.replace('-D', '') for d in deflist]
 
-def getSrcsByRgx(wkmh, *regexs):
-    if isinstance(wkmh, ModuleHandle):
-        wk = wkmh.getWorkspace()
-    else:
-        wk = wkmh
-    srcs = []
-    for r in regexs:
-        srcs += list(Path(wk['modPath']).rglob(r))
+c_cpp_properties = {
+    "configurations": [
+        {
+            'name': 'ARM',
+            'defines': defines,
+            "compilerPath": "arm-none-eabi-gcc",
+            "intelliSenseMode": "gcc-x64",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "includePath": strIncs,
+            "browse": {
+                "path": strIncs,
+                "limitSymbolsToIncludedHeaders": True,
+                "databaseFilename": "${workspaceFolder}/.vscode/browse.vc.db"
+            }
+        }
+    ],
+    "version": 4
+}
 
-    srcs = list(dict.fromkeys(srcs))
-    return srcs
+output = json.dumps(c_cpp_properties, indent=4)
 
-
-def getAllIncs(wkmh, incType: IncType):
-    if isinstance(wkmh, ModuleHandle):
-        wk = wkmh.getWorkspace()
-    else:
-        wk = wkmh
-    incsfiles = []
-    for ext in incType:
-        incsfiles += list(Path(wk['modPath']).rglob('*' + ext))
-
-    incs = []
-    for i in incsfiles:
-        incs.append(i.parent)
-
-    incs = list(dict.fromkeys(incs))
-    return incs
-
-
-def getAllIncs_C(wkmh):
-    if isinstance(wkmh, ModuleHandle):
-        wk = wkmh.getWorkspace()
-    else:
-        wk = wkmh
-    return getAllIncs(wk, IncType.C)
+if not os.path.exists('.vscode'):
+    os.makedirs('.vscode')
+fileout = open(".vscode/c_cpp_properties.json", "w")
+fileout.write(output)
+fileout.close()

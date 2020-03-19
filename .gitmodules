@@ -1,0 +1,6 @@
+[submodule "Middlewares/Third_Party/bcg729"]
+	path = Middlewares/Third_Party/bcg729
+	url = https://github.com/ericsonj/bcg729.git
+[submodule "Middlewares/Third_Party/opus"]
+	path = Middlewares/Third_Party/opus
+	url = https://git.xiph.org/opus.git
